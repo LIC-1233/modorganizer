@@ -18,3 +18,9 @@ jobs:
             7z zlib gtest libbsarch libloot openssl bzip2 python lz4 spdlog
             boost boost-di sip pyqt pybind11 ss licenses explorerpp DirectXTex
           mo2-dependencies: usvfs cmake_common uibase githubpp bsatk esptk archive lootcli game_gamebryo
+      - name: upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: mo2
+          path: ./build/modorganizer_super/modorganizer/
+          compression-level: 9
