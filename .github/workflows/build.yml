@@ -18,7 +18,14 @@ jobs:
         uses: ModOrganizer2/build-with-mob-action@master
         with:
           qt-modules: qtpositioning qtwebchannel qtwebengine qtwebsockets qtnetworkauth
-          mo2-dependencies: usvfs uibase bsatk esptk archive lootcli plugin_python basic_games
+          mo2-dependencies: usvfs uibase bsatk esptk archive lootcli basic_games
+
+      - name: Build plugin_python
+        id: build-plugin_python
+        uses: ModOrganizer2/build-with-mob-action@master
+        with:
+          mo2-dependencies: plugin_python
+          mo2-skip-checkout: true
 
       - name: Install ModOrganizer
         shell: pwsh
